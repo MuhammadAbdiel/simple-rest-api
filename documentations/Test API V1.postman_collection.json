@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "7216483b-5925-4cf4-9e1c-caa88c5fba3b",
+		"name": "Test API V1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34687635"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get All Posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PREFIX}}/posts",
+							"host": [
+								"{{URL}}{{PREFIX}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentications",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Muhammad Abdiel Firjatullah\",\r\n    \"email\": \"abdielfirdie@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PREFIX}}/auth/signup",
+							"host": [
+								"{{URL}}{{PREFIX}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abdielfirdie@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PREFIX}}/auth/signin",
+							"host": [
+								"{{URL}}{{PREFIX}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Refresh Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{PREFIX}}/refreshToken/{{REFRESH_TOKEN}}",
+							"host": [
+								"{{URL}}{{PREFIX}}"
+							],
+							"path": [
+								"refreshToken",
+								"{{REFRESH_TOKEN}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "PREFIX",
+			"value": "/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "ACCESS_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhYTA5NTI1Zi02YWM1LTQ4ZGMtYjQ3My02ZTYzY2NjMzllYzciLCJuYW1lIjoiRmlyZGllIiwiZW1haWwiOiJhYmRpZWxmaXJkaWVAZ21haWwuY29tIiwiaWF0IjoxNzIzMzY5NTczLCJleHAiOjE3MjMzNjk2MzN9.ZJbsUJ3PZYAgGUeJ8HcUi4_PClzQVu_JEpcjbFz9d9M",
+			"type": "string"
+		},
+		{
+			"key": "REFRESH_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJhYTA5NTI1Zi02YWM1LTQ4ZGMtYjQ3My02ZTYzY2NjMzllYzciLCJuYW1lIjoiRmlyZGllIiwiZW1haWwiOiJhYmRpZWxmaXJkaWVAZ21haWwuY29tIiwiaWF0IjoxNzIzMzY5NDk0LCJleHAiOjE3MjM0NTU4OTR9.Nd-TBTBhBQqfE0lw4BuTCq-c-yl6RpDDtih4ZuDNRms",
+			"type": "string"
+		}
+	]
+}
